@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		5C9A438227C10005001C6B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A438127C10005001C6B65 /* AppDelegate.swift */; };
 		5C9A438427C10005001C6B65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A438327C10005001C6B65 /* SceneDelegate.swift */; };
-		5C9A438627C10005001C6B65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A438527C10005001C6B65 /* ViewController.swift */; };
-		5C9A438927C10005001C6B65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9A438727C10005001C6B65 /* Main.storyboard */; };
 		5C9A438B27C10006001C6B65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9A438A27C10006001C6B65 /* Assets.xcassets */; };
 		5C9A438E27C10006001C6B65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9A438C27C10006001C6B65 /* LaunchScreen.storyboard */; };
 		5C9A439927C10006001C6B65 /* ITunesOmegaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A439827C10006001C6B65 /* ITunesOmegaTests.swift */; };
 		5C9A43A327C10006001C6B65 /* ITunesOmegaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43A227C10006001C6B65 /* ITunesOmegaUITests.swift */; };
 		5C9A43A527C10006001C6B65 /* ITunesOmegaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43A427C10006001C6B65 /* ITunesOmegaUITestsLaunchTests.swift */; };
+		5C9A43B627C105A6001C6B65 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43B527C105A6001C6B65 /* User.swift */; };
+		5C9A43BC27C10E72001C6B65 /* ITunesSearchClient.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43BB27C10E72001C6B65 /* ITunesSearchClient.swift.swift */; };
+		5C9A43BD27C116E5001C6B65 /* ITunesSearchClient.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43BB27C10E72001C6B65 /* ITunesSearchClient.swift.swift */; };
+		5C9A43C027C11A00001C6B65 /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */; };
+		5C9A43C127C11CF3001C6B65 /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */; };
+		5C9A43C327C11E10001C6B65 /* ITunesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43C227C11E10001C6B65 /* ITunesModel.swift */; };
+		5C9A43C427C122F0001C6B65 /* ITunesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43C227C11E10001C6B65 /* ITunesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +44,6 @@
 		5C9A437E27C10005001C6B65 /* ITunesOmega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITunesOmega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9A438127C10005001C6B65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C9A438327C10005001C6B65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5C9A438527C10005001C6B65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5C9A438827C10005001C6B65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C9A438A27C10006001C6B65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C9A438D27C10006001C6B65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C9A438F27C10006001C6B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,10 @@
 		5C9A439E27C10006001C6B65 /* ITunesOmegaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITunesOmegaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9A43A227C10006001C6B65 /* ITunesOmegaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesOmegaUITests.swift; sourceTree = "<group>"; };
 		5C9A43A427C10006001C6B65 /* ITunesOmegaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesOmegaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5C9A43B527C105A6001C6B65 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5C9A43BB27C10E72001C6B65 /* ITunesSearchClient.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchClient.swift.swift; sourceTree = "<group>"; };
+		5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
+		5C9A43C227C11E10001C6B65 /* ITunesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +106,12 @@
 		5C9A438027C10005001C6B65 /* ITunesOmega */ = {
 			isa = PBXGroup;
 			children = (
+				5C9A43BE27C119DF001C6B65 /* Extensions */,
+				5C9A43B427C10472001C6B65 /* View */,
+				5C9A43B327C1045E001C6B65 /* Network */,
+				5C9A43B227C10458001C6B65 /* Model */,
 				5C9A438127C10005001C6B65 /* AppDelegate.swift */,
 				5C9A438327C10005001C6B65 /* SceneDelegate.swift */,
-				5C9A438527C10005001C6B65 /* ViewController.swift */,
-				5C9A438727C10005001C6B65 /* Main.storyboard */,
 				5C9A438A27C10006001C6B65 /* Assets.xcassets */,
 				5C9A438C27C10006001C6B65 /* LaunchScreen.storyboard */,
 				5C9A438F27C10006001C6B65 /* Info.plist */,
@@ -127,6 +136,38 @@
 			path = ITunesOmegaUITests;
 			sourceTree = "<group>";
 		};
+		5C9A43B227C10458001C6B65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C9A43B527C105A6001C6B65 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C9A43B327C1045E001C6B65 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5C9A43BB27C10E72001C6B65 /* ITunesSearchClient.swift.swift */,
+				5C9A43C227C11E10001C6B65 /* ITunesModel.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5C9A43B427C10472001C6B65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C9A43BE27C119DF001C6B65 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +176,7 @@
 			buildConfigurationList = 5C9A43A827C10006001C6B65 /* Build configuration list for PBXNativeTarget "ITunesOmega" */;
 			buildPhases = (
 				5C9A437A27C10005001C6B65 /* Sources */,
+				5C9A43B127C10010001C6B65 /* ShellScript */,
 				5C9A437B27C10005001C6B65 /* Frameworks */,
 				5C9A437C27C10005001C6B65 /* Resources */,
 			);
@@ -233,7 +275,6 @@
 			files = (
 				5C9A438E27C10006001C6B65 /* LaunchScreen.storyboard in Resources */,
 				5C9A438B27C10006001C6B65 /* Assets.xcassets in Resources */,
-				5C9A438927C10005001C6B65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +294,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C9A43B127C10010001C6B65 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5C9A437A27C10005001C6B65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C9A438627C10005001C6B65 /* ViewController.swift in Sources */,
 				5C9A438227C10005001C6B65 /* AppDelegate.swift in Sources */,
+				5C9A43BC27C10E72001C6B65 /* ITunesSearchClient.swift.swift in Sources */,
+				5C9A43C027C11A00001C6B65 /* HTTPURLResponse.swift in Sources */,
 				5C9A438427C10005001C6B65 /* SceneDelegate.swift in Sources */,
+				5C9A43B627C105A6001C6B65 /* User.swift in Sources */,
+				5C9A43C327C11E10001C6B65 /* ITunesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +333,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9A439927C10006001C6B65 /* ITunesOmegaTests.swift in Sources */,
+				5C9A43BD27C116E5001C6B65 /* ITunesSearchClient.swift.swift in Sources */,
+				5C9A43C127C11CF3001C6B65 /* HTTPURLResponse.swift in Sources */,
+				5C9A43C427C122F0001C6B65 /* ITunesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +364,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5C9A438727C10005001C6B65 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C9A438827C10005001C6B65 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5C9A438C27C10006001C6B65 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,7 +503,6 @@
 				INFOPLIST_FILE = ITunesOmega/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +530,6 @@
 				INFOPLIST_FILE = ITunesOmega/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,7 +537,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = luci666.ITunesOmega;
+				PRODUCT_BUNDLE_IDENTIFIER = luci666.Project32;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
