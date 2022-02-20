@@ -19,6 +19,8 @@ struct ITunesEntity: Codable {
     let artistName: String
     let trackCount: Int
     let collectionId: Int
+    let releaseDate: Date?
+    let trackName: String?
 }
 
 enum KindOfContent: String, Codable {

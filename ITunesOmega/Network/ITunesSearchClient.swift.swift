@@ -14,10 +14,14 @@ class ITunesSearchClient {
                                                   "media": "music",
                                                   "entity": "album"]
     private static let defaultLookupParameters = ["entity": "song"]
+
     let session: URLSession
+    let decoder = JSONDecoder()
+    private var fetchInProgress = false
 
     init(session: URLSession = URLSession.shared) {
         self.session = session
+        decoder.dateDecodingStrategy = .iso8601
     }
 
     private func url(with parameters: [String: String], path: String) -> URL {
@@ -29,19 +33,22 @@ class ITunesSearchClient {
     }
 
     private func sendRequest(_ urlRequest: URLRequest, completion: @escaping (FetchResult) -> Void) {
-        session.dataTask(with: urlRequest) { data, response, error in
+        guard fetchInProgress == false else {return}
+        fetchInProgress = true
+        session.dataTask(with: urlRequest) { [weak self] data, response, error in
+            self?.fetchInProgress = false
             guard let httpResponse = response as? HTTPURLResponse,
             httpResponse.isSuccessStatusCode,
             let data = data else {
                 completion(.failed(error: DataResponseError.network))
                 return
             }
-            guard let albumsResponse = try? JSONDecoder().decode(ITunesResponse.self, from: data)
+            guard let albumsResponse = try? self?.decoder.decode(ITunesResponse.self, from: data)
             else {
                 completion(.failed(error: DataResponseError.decoding))
                 return
             }
-            completion(.success(albums: albumsResponse.results))
+            completion(.success(enitis: albumsResponse.results))
         }.resume()
     }
 
@@ -76,6 +83,6 @@ enum DataResponseError: Error {
 }
 
 enum FetchResult {
-    case success(albums: [ITunesEntity])
+    case success(enitis: [ITunesEntity])
     case failed(error: Error)
 }

@@ -21,6 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
+        let navVC = UINavigationController()
+        navVC.viewControllers = [AlbumsListViewController(albumsViewModel: AlbumsViewModel())]
+        window?.rootViewController = navVC
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
