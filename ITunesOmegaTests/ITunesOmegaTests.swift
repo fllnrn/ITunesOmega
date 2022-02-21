@@ -26,7 +26,7 @@ class ITunesOmegaTests: XCTestCase {
             case .success(let albums):
                 XCTAssertEqual(albums.count, 50)
                 expectation.fulfill()
-            case .failed(let error):
+            case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
         }
@@ -48,7 +48,7 @@ class ITunesOmegaTests: XCTestCase {
                 }
                 XCTAssertEqual(trackCount, 7)
                 expectation.fulfill()
-            case .failed(let error):
+            case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
         }

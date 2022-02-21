@@ -8,11 +8,12 @@
 import Foundation
 
 struct Album {
-    let imageUIL: String?
+    let imageURL: String?
     let albumTitle: String
     let artistName: String
     let trackCount: Int
     let albumId: Int
+    let releaseDate: Date?
     var tracks: [Track]?
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C706D7827C283E300C449E2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5C706D7727C283E300C449E2 /* .swiftlint.yml */; };
 		5C83592227C145D4008C7158 /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83592127C145D4008C7158 /* AlbumsListViewController.swift */; };
 		5C83592427C14AB9008C7158 /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83592327C14AB9008C7158 /* AlbumsViewModel.swift */; };
 		5C83592627C14AF1008C7158 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83592527C14AF1008C7158 /* Album.swift */; };
@@ -26,6 +27,8 @@
 		5C9A43C327C11E10001C6B65 /* ITunesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43C227C11E10001C6B65 /* ITunesModel.swift */; };
 		5C9A43C427C122F0001C6B65 /* ITunesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43C227C11E10001C6B65 /* ITunesModel.swift */; };
 		5CD9696127C1800C00A08E5A /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9696027C1800C00A08E5A /* AlbumDetailViewController.swift */; };
+		5CE9B05B27C29D7600D91B16 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9B05A27C29D7600D91B16 /* ImageFetcher.swift */; };
+		5CE9B05D27C2C12600D91B16 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9B05C27C2C12600D91B16 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C706D7727C283E300C449E2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5C83592127C145D4008C7158 /* AlbumsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewController.swift; sourceTree = "<group>"; };
 		5C83592327C14AB9008C7158 /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
 		5C83592527C14AF1008C7158 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
 		5C9A43C227C11E10001C6B65 /* ITunesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesModel.swift; sourceTree = "<group>"; };
 		5CD9696027C1800C00A08E5A /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
+		5CE9B05A27C29D7600D91B16 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		5CE9B05C27C2C12600D91B16 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 				5C9A438327C10005001C6B65 /* SceneDelegate.swift */,
 				5C9A438A27C10006001C6B65 /* Assets.xcassets */,
 				5C9A438C27C10006001C6B65 /* LaunchScreen.storyboard */,
+				5C706D7727C283E300C449E2 /* .swiftlint.yml */,
 				5C9A438F27C10006001C6B65 /* Info.plist */,
 			);
 			path = ITunesOmega;
@@ -160,6 +167,7 @@
 			children = (
 				5C9A43BB27C10E72001C6B65 /* ITunesSearchClient.swift.swift */,
 				5C9A43C227C11E10001C6B65 /* ITunesModel.swift */,
+				5CE9B05A27C29D7600D91B16 /* ImageFetcher.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -167,8 +175,8 @@
 		5C9A43B427C10472001C6B65 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C83592127C145D4008C7158 /* AlbumsListViewController.swift */,
 				5C83592327C14AB9008C7158 /* AlbumsViewModel.swift */,
+				5C83592127C145D4008C7158 /* AlbumsListViewController.swift */,
 				5C83592727C14B68008C7158 /* AlbumCell.swift */,
 				5CD9696027C1800C00A08E5A /* AlbumDetailViewController.swift */,
 			);
@@ -179,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */,
+				5CE9B05C27C2C12600D91B16 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C706D7827C283E300C449E2 /* .swiftlint.yml in Resources */,
 				5C9A438E27C10006001C6B65 /* LaunchScreen.storyboard in Resources */,
 				5C9A438B27C10006001C6B65 /* Assets.xcassets in Resources */,
 			);
@@ -343,7 +353,9 @@
 				5C83592627C14AF1008C7158 /* Album.swift in Sources */,
 				5C9A438427C10005001C6B65 /* SceneDelegate.swift in Sources */,
 				5C83592827C14B68008C7158 /* AlbumCell.swift in Sources */,
+				5CE9B05B27C29D7600D91B16 /* ImageFetcher.swift in Sources */,
 				5C9A43B627C105A6001C6B65 /* User.swift in Sources */,
+				5CE9B05D27C2C12600D91B16 /* Date.swift in Sources */,
 				5C9A43C327C11E10001C6B65 /* ITunesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

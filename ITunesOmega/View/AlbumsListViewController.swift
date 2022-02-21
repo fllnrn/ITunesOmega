@@ -34,7 +34,7 @@ class AlbumsListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Albums search"
+        title = NSLocalizedString("Albums", comment: "Albums")
         setupUI()
     }
 
@@ -43,30 +43,32 @@ class AlbumsListViewController: UIViewController {
 
         view.addSubview(searchField)
         searchField.translatesAutoresizingMaskIntoConstraints = false
-        searchField.placeholder = "search..."
+        searchField.autocorrectionType = .no
+        searchField.placeholder = NSLocalizedString("search...", comment: "search")
         searchField.borderStyle = .roundedRect
-        NSLayoutConstraint.activate(
-            [searchField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                              constant: LayoutConstants.spacer),
-             searchField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                                                  constant: LayoutConstants.spacer),
-             searchField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
-                                                   constant: -LayoutConstants.spacer)
-            ])
+        let searchConstraints = [
+            searchField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: LayoutConstants.spacer),
+            searchField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: LayoutConstants.spacer),
+            searchField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -LayoutConstants.spacer)]
+        NSLayoutConstraint.activate(searchConstraints)
 
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(AlbumCell.self, forCellReuseIdentifier: "\(AlbumCell.self)")
-        NSLayoutConstraint.activate([tableView.widthAnchor.constraint(equalTo: view.widthAnchor),
-                                     tableView.topAnchor.constraint(equalTo: searchField.bottomAnchor,
-                                                                    constant: LayoutConstants.spacer),
-                                     tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor,
-                                                                       constant: LayoutConstants.spacer)])
+        let tableViewConstraints = [
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: LayoutConstants.spacer),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)]
+        NSLayoutConstraint.activate(tableViewConstraints)
+
         view.addSubview(activityIndicator)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.hidesWhenStopped = true
-        NSLayoutConstraint.activate([activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
+        let activityConstraints = [
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)]
+        NSLayoutConstraint.activate(activityConstraints)
     }
 
     func searchPressed() {
@@ -81,13 +83,14 @@ class AlbumsListViewController: UIViewController {
 extension AlbumsListViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchPressed()
+        searchField.resignFirstResponder()
         return true
     }
 }
 
 extension AlbumsListViewController: AlbumsListViewModelDelegate {
-    func fetchImageComplete(for indexPath: IndexPath) {
-        print("Fetch Image complete")
+    func fetchImageComplete(for index: Int) {
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
 
     func fetchAlbumsComplete() {
@@ -98,10 +101,10 @@ extension AlbumsListViewController: AlbumsListViewModelDelegate {
     }
 
     func fetchFailed(error: Error) {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
-        DispatchQueue.main.async { [weak self] in
-            self?.present(alert, animated: true)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+            self.present(alert, animated: true)
         }
     }
 
@@ -113,9 +116,11 @@ extension AlbumsListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "\(AlbumCell.self)", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(AlbumCell.self)", for: indexPath)
+                as? AlbumCell else {fatalError()}
+
         let album = viewModel.albums[indexPath.row]
-        cell.textLabel?.text = album.albumTitle
+        cell.configure(with: album, cover: viewModel.albumCover(for: indexPath.row))
         return cell
     }
 
@@ -123,8 +128,8 @@ extension AlbumsListViewController: UITableViewDataSource {
 
 extension AlbumsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.selectedIndex = indexPath.row
         let detailVC = AlbumDetailViewController(viewModel)
+        viewModel.selectedIndex = indexPath.row
         show(detailVC, sender: true)
     }
 }

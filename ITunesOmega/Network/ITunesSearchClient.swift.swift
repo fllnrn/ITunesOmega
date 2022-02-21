@@ -10,8 +10,7 @@ import Foundation
 class ITunesSearchClient {
 
     private static let baseUrl = URL(string: "https://itunes.apple.com/")!
-    private static let defaultSearchParameters = ["country": "RU",
-                                                  "media": "music",
+    private static let defaultSearchParameters = ["media": "music",
                                                   "entity": "album"]
     private static let defaultLookupParameters = ["entity": "song"]
 
@@ -32,34 +31,34 @@ class ITunesSearchClient {
         return components.url!
     }
 
-    private func sendRequest(_ urlRequest: URLRequest, completion: @escaping (FetchResult) -> Void) {
+    private func sendRequest(_ urlRequest: URLRequest, completion: @escaping (Result<[ITunesEntity], DataResponseError>) -> Void) {
         guard fetchInProgress == false else {return}
         fetchInProgress = true
-        session.dataTask(with: urlRequest) { [weak self] data, response, error in
+        session.dataTask(with: urlRequest) { [weak self] data, response, _ in
             self?.fetchInProgress = false
             guard let httpResponse = response as? HTTPURLResponse,
             httpResponse.isSuccessStatusCode,
             let data = data else {
-                completion(.failed(error: DataResponseError.network))
+                completion(.failure(DataResponseError.network))
                 return
             }
             guard let albumsResponse = try? self?.decoder.decode(ITunesResponse.self, from: data)
             else {
-                completion(.failed(error: DataResponseError.decoding))
+                completion(.failure(DataResponseError.decoding))
                 return
             }
-            completion(.success(enitis: albumsResponse.results))
+            completion(.success(albumsResponse.results))
         }.resume()
     }
 
-    func fetchAlbums(with searchText: String, completion: @escaping (FetchResult) -> Void) {
+    func fetchAlbums(with searchText: String, completion: @escaping (Result<[ITunesEntity], DataResponseError>) -> Void) {
         var parameters = Self.defaultSearchParameters
         parameters["term"] = searchText
         let urlRequest = URLRequest(url: url(with: parameters, path: "search"))
         sendRequest(urlRequest, completion: completion)
     }
 
-    func fetchTracks(with albumId: Int, completion: @escaping (FetchResult) -> Void) {
+    func fetchTracks(with albumId: Int, completion: @escaping (Result<[ITunesEntity], DataResponseError>) -> Void) {
         var parameters = Self.defaultLookupParameters
         parameters["id"] = String(albumId)
         let urlRequest = URLRequest(url: url(with: parameters, path: "lookup"))
@@ -80,9 +79,4 @@ enum DataResponseError: Error {
             return "Decoding error"
         }
     }
-}
-
-enum FetchResult {
-    case success(enitis: [ITunesEntity])
-    case failed(error: Error)
 }
