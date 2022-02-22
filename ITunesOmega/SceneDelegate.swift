@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         let navVC = UINavigationController()
-        navVC.viewControllers = [AlbumsListViewController(albumsViewModel: AlbumsViewModel())]
+        //        navVC.viewControllers = [AlbumsListViewController(albumsViewModel: AlbumsViewModel())]
+        navVC.viewControllers = [WelcomeViewController()]
         window?.rootViewController = navVC
         window?.makeKeyAndVisible()
     }
