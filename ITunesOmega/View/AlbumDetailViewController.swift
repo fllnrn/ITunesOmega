@@ -43,12 +43,25 @@ class AlbumDetailViewController: UIViewController {
         view.backgroundColor = .systemBackground
         albumTitle.numberOfLines = 0
         artistName.numberOfLines = 0
-        imageView.contentMode = .topRight
-
+        artistName.font = .preferredFont(forTextStyle: .headline)
     }
 
     private func setupLayout() {
+        let stackView = UIStackView(arrangedSubviews: [albumTitle, artistName])
+        stackView.axis = .vertical
+        stackView.spacing = LayoutConstants.spacer
+        view.addSubview(stackView)
         view.addSubview(imageView)
+        view.addSubview(tableView)
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let stackConstraints = [
+            stackView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: LayoutConstants.spacer),
+            stackView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: LayoutConstants.spacer),
+            stackView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
+        ]
+        NSLayoutConstraint.activate(stackConstraints)
+
         imageView.translatesAutoresizingMaskIntoConstraints = false
         let imageConstraints = [
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: LayoutConstants.spacer),
@@ -58,38 +71,19 @@ class AlbumDetailViewController: UIViewController {
         ]
         NSLayoutConstraint.activate(imageConstraints)
 
-        view.addSubview(albumTitle)
-        albumTitle.translatesAutoresizingMaskIntoConstraints = false
-        let titleConstraints = [
-            albumTitle.topAnchor.constraint(equalTo: imageView.topAnchor),
-            albumTitle.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: LayoutConstants.spacer),
-            albumTitle.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -LayoutConstants.spacer)
-        ]
-        NSLayoutConstraint.activate(titleConstraints)
-
-        view.addSubview(artistName)
-        artistName.translatesAutoresizingMaskIntoConstraints = false
-        let bandCondtraints = [
-            artistName.topAnchor.constraint(equalTo: albumTitle.bottomAnchor, constant: LayoutConstants.spacer),
-            artistName.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: LayoutConstants.spacer),
-            artistName.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -LayoutConstants.spacer)
-        ]
-        NSLayoutConstraint.activate(bandCondtraints)
-
-        view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
-        let topToImage = tableView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: LayoutConstants.spacer)
+        let topToImage = tableView.topAnchor.constraint(equalTo: imageView.bottomAnchor)
         topToImage.priority -= 1
         let tableConstraints = [
             topToImage,
-            tableView.topAnchor.constraint(greaterThanOrEqualTo: artistName.bottomAnchor, constant: LayoutConstants.spacer),
+            tableView.topAnchor.constraint(greaterThanOrEqualTo: stackView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ]
         NSLayoutConstraint.activate(tableConstraints)
 
+        artistName.setContentCompressionResistancePriority(.required, for: .vertical)
     }
 
     func configure(_ album: Album, cover: UIImage?) {
