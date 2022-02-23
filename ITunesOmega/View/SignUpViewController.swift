@@ -40,7 +40,7 @@ class SignUpViewController: UIViewController {
     private func configure(textField: UITextField) {
         textField.borderStyle = .roundedRect
         textField.delegate = self
-        textField.inputAccessoryView = doneToolbar
+        textField.inputAccessoryView = textField.doneToolbar
         textField.autocorrectionType = .no
     }
 
@@ -64,7 +64,7 @@ class SignUpViewController: UIViewController {
         phone.withExamplePlaceholder = true
         phone.withPrefix = true // международный формат +7 ХХХ ХХХ-ХХ-ХХ / false - 8 (XXX) XXX XX-XX
         phone.maxDigits = 10
-        phone.inputAccessoryView = doneToolbar
+        phone.inputAccessoryView = phone.doneToolbar
 
         configure(textField: email)
         email.placeholder = NSLocalizedString("Email", comment: "Email")
@@ -183,22 +183,5 @@ extension SignUpViewController: UITextFieldDelegate {
         _ = isFormValide()
         textField.resignFirstResponder()
         return true
-    }
-}
-
-extension SignUpViewController {
-    var doneToolbar: UIToolbar {
-        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
-
-        doneToolbar.items = [flexSpace, done]
-        doneToolbar.sizeToFit()
-
-        return doneToolbar
-    }
-
-    @objc func doneButtonAction() {
-        self.view.endEditing(true)
     }
 }

@@ -12,6 +12,7 @@
 		5C54DA9627C57FDA000247F9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */; };
 		5C6D2D7027C646A000D778D4 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C6D2D6F27C646A000D778D4 /* PhoneNumberKit */; };
 		5C6D2D7427C64CC200D778D4 /* RUPhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D2D7327C64CC200D778D4 /* RUPhoneTextField.swift */; };
+		5C6D2D7927C6671100D778D4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D2D7827C6671100D778D4 /* TextField.swift */; };
 		5C706D7827C283E300C449E2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5C706D7727C283E300C449E2 /* .swiftlint.yml */; };
 		5C83592227C145D4008C7158 /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83592127C145D4008C7158 /* AlbumsListViewController.swift */; };
 		5C83592427C14AB9008C7158 /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83592327C14AB9008C7158 /* AlbumsViewModel.swift */; };
@@ -59,6 +60,7 @@
 		5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		5C6D2D7327C64CC200D778D4 /* RUPhoneTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUPhoneTextField.swift; sourceTree = "<group>"; };
+		5C6D2D7827C6671100D778D4 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		5C706D7727C283E300C449E2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5C83592127C145D4008C7158 /* AlbumsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewController.swift; sourceTree = "<group>"; };
 		5C83592327C14AB9008C7158 /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */,
 				5CE9B05C27C2C12600D91B16 /* Date.swift */,
 				5C6D2D7327C64CC200D778D4 /* RUPhoneTextField.swift */,
+				5C6D2D7827C6671100D778D4 /* TextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				5C83592627C14AF1008C7158 /* Album.swift in Sources */,
 				5C9A438427C10005001C6B65 /* SceneDelegate.swift in Sources */,
 				5C83592827C14B68008C7158 /* AlbumCell.swift in Sources */,
+				5C6D2D7927C6671100D778D4 /* TextField.swift in Sources */,
 				5C90550027C43DBF00AA5CC0 /* SignUpViewController.swift in Sources */,
 				5CE9B05B27C29D7600D91B16 /* ImageFetcher.swift in Sources */,
 				5C54DA9627C57FDA000247F9 /* User+CoreDataProperties.swift in Sources */,
