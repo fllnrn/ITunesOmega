@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C54DA9127C5752E000247F9 /* ITunesOmega.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA8F27C5752E000247F9 /* ITunesOmega.xcdatamodeld */; };
+		5C54DA9527C57FDA000247F9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */; };
+		5C54DA9627C57FDA000247F9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */; };
+		5C6D2D7027C646A000D778D4 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C6D2D6F27C646A000D778D4 /* PhoneNumberKit */; };
+		5C6D2D7427C64CC200D778D4 /* RUPhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D2D7327C64CC200D778D4 /* RUPhoneTextField.swift */; };
 		5C706D7827C283E300C449E2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5C706D7727C283E300C449E2 /* .swiftlint.yml */; };
 		5C83592227C145D4008C7158 /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83592127C145D4008C7158 /* AlbumsListViewController.swift */; };
 		5C83592427C14AB9008C7158 /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83592327C14AB9008C7158 /* AlbumsViewModel.swift */; };
@@ -21,7 +26,6 @@
 		5C9A439927C10006001C6B65 /* ITunesOmegaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A439827C10006001C6B65 /* ITunesOmegaTests.swift */; };
 		5C9A43A327C10006001C6B65 /* ITunesOmegaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43A227C10006001C6B65 /* ITunesOmegaUITests.swift */; };
 		5C9A43A527C10006001C6B65 /* ITunesOmegaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43A427C10006001C6B65 /* ITunesOmegaUITestsLaunchTests.swift */; };
-		5C9A43B627C105A6001C6B65 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43B527C105A6001C6B65 /* User.swift */; };
 		5C9A43BC27C10E72001C6B65 /* ITunesSearchClient.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43BB27C10E72001C6B65 /* ITunesSearchClient.swift.swift */; };
 		5C9A43BD27C116E5001C6B65 /* ITunesSearchClient.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43BB27C10E72001C6B65 /* ITunesSearchClient.swift.swift */; };
 		5C9A43C027C11A00001C6B65 /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */; };
@@ -51,6 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C54DA9027C5752E000247F9 /* ITunesOmega.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITunesOmega.xcdatamodel; sourceTree = "<group>"; };
+		5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		5C6D2D7327C64CC200D778D4 /* RUPhoneTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUPhoneTextField.swift; sourceTree = "<group>"; };
 		5C706D7727C283E300C449E2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5C83592127C145D4008C7158 /* AlbumsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewController.swift; sourceTree = "<group>"; };
 		5C83592327C14AB9008C7158 /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
@@ -69,7 +77,6 @@
 		5C9A439E27C10006001C6B65 /* ITunesOmegaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITunesOmegaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9A43A227C10006001C6B65 /* ITunesOmegaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesOmegaUITests.swift; sourceTree = "<group>"; };
 		5C9A43A427C10006001C6B65 /* ITunesOmegaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesOmegaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5C9A43B527C105A6001C6B65 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C9A43BB27C10E72001C6B65 /* ITunesSearchClient.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchClient.swift.swift; sourceTree = "<group>"; };
 		5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
 		5C9A43C227C11E10001C6B65 /* ITunesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesModel.swift; sourceTree = "<group>"; };
@@ -83,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C6D2D7027C646A000D778D4 /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C54DA9227C576C8000247F9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */,
+				5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		5C9A437527C10005001C6B65 = {
 			isa = PBXGroup;
 			children = (
@@ -126,16 +143,18 @@
 		5C9A438027C10005001C6B65 /* ITunesOmega */ = {
 			isa = PBXGroup;
 			children = (
-				5C9A43BE27C119DF001C6B65 /* Extensions */,
+				5C54DA9227C576C8000247F9 /* CoreData */,
 				5C9A43B427C10472001C6B65 /* View */,
-				5C9A43B327C1045E001C6B65 /* Network */,
 				5C9A43B227C10458001C6B65 /* Model */,
+				5C9A43B327C1045E001C6B65 /* Network */,
+				5C9A43BE27C119DF001C6B65 /* Extensions */,
 				5C9A438127C10005001C6B65 /* AppDelegate.swift */,
 				5C9A438327C10005001C6B65 /* SceneDelegate.swift */,
 				5C9A438A27C10006001C6B65 /* Assets.xcassets */,
 				5C9A438C27C10006001C6B65 /* LaunchScreen.storyboard */,
 				5C706D7727C283E300C449E2 /* .swiftlint.yml */,
 				5C9A438F27C10006001C6B65 /* Info.plist */,
+				5C54DA8F27C5752E000247F9 /* ITunesOmega.xcdatamodeld */,
 			);
 			path = ITunesOmega;
 			sourceTree = "<group>";
@@ -160,7 +179,6 @@
 		5C9A43B227C10458001C6B65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5C9A43B527C105A6001C6B65 /* User.swift */,
 				5C83592527C14AF1008C7158 /* Album.swift */,
 			);
 			path = Model;
@@ -194,6 +212,7 @@
 			children = (
 				5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */,
 				5CE9B05C27C2C12600D91B16 /* Date.swift */,
+				5C6D2D7327C64CC200D778D4 /* RUPhoneTextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,6 +234,9 @@
 			dependencies = (
 			);
 			name = ITunesOmega;
+			packageProductDependencies = (
+				5C6D2D6F27C646A000D778D4 /* PhoneNumberKit */,
+			);
 			productName = ITunesOmega;
 			productReference = 5C9A437E27C10005001C6B65 /* ITunesOmega.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +309,9 @@
 				Base,
 			);
 			mainGroup = 5C9A437527C10005001C6B65;
+			packageReferences = (
+				5C6D2D6E27C646A000D778D4 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+			);
 			productRefGroup = 5C9A437F27C10005001C6B65 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -351,18 +376,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C83592427C14AB9008C7158 /* AlbumsViewModel.swift in Sources */,
+				5C54DA9127C5752E000247F9 /* ITunesOmega.xcdatamodeld in Sources */,
 				5C83592227C145D4008C7158 /* AlbumsListViewController.swift in Sources */,
 				5C9A438227C10005001C6B65 /* AppDelegate.swift in Sources */,
 				5CD9696127C1800C00A08E5A /* AlbumDetailViewController.swift in Sources */,
 				5C9A43BC27C10E72001C6B65 /* ITunesSearchClient.swift.swift in Sources */,
+				5C54DA9527C57FDA000247F9 /* User+CoreDataClass.swift in Sources */,
 				5C9A43C027C11A00001C6B65 /* HTTPURLResponse.swift in Sources */,
 				5C83592627C14AF1008C7158 /* Album.swift in Sources */,
 				5C9A438427C10005001C6B65 /* SceneDelegate.swift in Sources */,
 				5C83592827C14B68008C7158 /* AlbumCell.swift in Sources */,
 				5C90550027C43DBF00AA5CC0 /* SignUpViewController.swift in Sources */,
 				5CE9B05B27C29D7600D91B16 /* ImageFetcher.swift in Sources */,
-				5C9A43B627C105A6001C6B65 /* User.swift in Sources */,
+				5C54DA9627C57FDA000247F9 /* User+CoreDataProperties.swift in Sources */,
 				5CE9B05D27C2C12600D91B16 /* Date.swift in Sources */,
+				5C6D2D7427C64CC200D778D4 /* RUPhoneTextField.swift in Sources */,
 				5C9A43C327C11E10001C6B65 /* ITunesModel.swift in Sources */,
 				5C9054FE27C4260B00AA5CC0 /* WelcomeViewController.swift in Sources */,
 			);
@@ -703,6 +731,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C6D2D6E27C646A000D778D4 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C6D2D6F27C646A000D778D4 /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C6D2D6E27C646A000D778D4 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		5C54DA8F27C5752E000247F9 /* ITunesOmega.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5C54DA9027C5752E000247F9 /* ITunesOmega.xcdatamodel */,
+			);
+			currentVersion = 5C54DA9027C5752E000247F9 /* ITunesOmega.xcdatamodel */;
+			path = ITunesOmega.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5C9A437627C10005001C6B65 /* Project object */;
 }

@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import PhoneNumberKit
 
 class SignUpViewController: UIViewController {
+    enum Constants {
+        static let minAgeDateTime = Date(timeIntervalSinceNow: -18*365*24*60*60)
+        static let maxAgeDateTime = Date(timeIntervalSinceNow: -100*365*24*60*60)
+    }
 
     private let name = UITextField()
     private let surname = UITextField()
-    private let age = UITextField()
-    private let phone = UITextField()
+    private let ageLbl = UILabel()
+    private let age = UIDatePicker()
+    private let phone = RUPhoneTextField()
     private let email = UITextField()
     private let password = UITextField()
     private let signUpBtn = UIButton(type: .roundedRect)
@@ -31,26 +37,43 @@ class SignUpViewController: UIViewController {
         layoutUI()
     }
 
+    private func configure(textField: UITextField) {
+        textField.borderStyle = .roundedRect
+        textField.delegate = self
+        textField.inputAccessoryView = doneToolbar
+        textField.autocorrectionType = .no
+    }
+
     private func setupUI() {
+        configure(textField: name)
         name.placeholder = NSLocalizedString("Name", comment: "Name")
-        name.borderStyle = .roundedRect
-        name.delegate = self
+        name.keyboardType = .asciiCapable
+
+        configure(textField: surname)
         surname.placeholder = NSLocalizedString("Surname", comment: "Surname")
-        surname.borderStyle = .roundedRect
-        surname.delegate = self
-        age.placeholder = NSLocalizedString("Age", comment: "Age")
-        age.borderStyle = .roundedRect
-        age.delegate = self
-        phone.placeholder = NSLocalizedString("Phone number", comment: "Phone number")
+        surname.keyboardType = .asciiCapable
+
+        ageLbl.text = NSLocalizedString("Birth Date", comment: "Birth Date")
+        age.datePickerMode = .date
+        age.date = Constants.minAgeDateTime
+        age.maximumDate = Constants.minAgeDateTime
+        age.minimumDate = Constants.maxAgeDateTime
+        age.preferredDatePickerStyle = .compact
+
         phone.borderStyle = .roundedRect
-        phone.delegate = self
+        phone.withExamplePlaceholder = true
+        phone.withPrefix = true // международный формат +7 ХХХ ХХХ-ХХ-ХХ / false - 8 (XXX) XXX XX-XX
+        phone.maxDigits = 10
+        phone.inputAccessoryView = doneToolbar
+
+        configure(textField: email)
         email.placeholder = NSLocalizedString("Email", comment: "Email")
-        email.borderStyle = .roundedRect
-        email.delegate = self
+        email.keyboardType = .emailAddress
+
+        configure(textField: password)
         password.placeholder = NSLocalizedString("Password", comment: "Password")
-        password.borderStyle = .roundedRect
-        password.delegate = self
         password.isSecureTextEntry = true
+
         signUpBtn.setTitle(NSLocalizedString("Sign Up", comment: "Sign Up"), for: .normal)
     }
 
@@ -59,18 +82,9 @@ class SignUpViewController: UIViewController {
     }
 
     private func layoutUI() {
-//        let doneBtn = UIButton(type: .roundedRect)
-//        doneBtn.setTitle(NSLocalizedString("Cancel", comment: "Cancel"), for: .normal)
-//        view.addSubview(doneBtn)
-//        doneBtn.translatesAutoresizingMaskIntoConstraints = false
-//        let doneLayout = [
-//            doneBtn.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-//            doneBtn.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
-//        ]
-//        NSLayoutConstraint.activate(doneLayout)
-
         name.translatesAutoresizingMaskIntoConstraints = false
         surname.translatesAutoresizingMaskIntoConstraints = false
+        ageLbl.translatesAutoresizingMaskIntoConstraints = false
         age.translatesAutoresizingMaskIntoConstraints = false
         phone.translatesAutoresizingMaskIntoConstraints = false
         email.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +93,8 @@ class SignUpViewController: UIViewController {
 
         stackView.addArrangedSubview(name)
         stackView.addArrangedSubview(surname)
-        stackView.addArrangedSubview(age)
+        stackView.addArrangedSubview(UIStackView(arrangedSubviews: [ageLbl, age]))
+        stackView.addArrangedSubview(phone)
         stackView.addArrangedSubview(email)
         stackView.addArrangedSubview(password)
         stackView.addArrangedSubview(signUpBtn)
@@ -111,12 +126,37 @@ class SignUpViewController: UIViewController {
         dismiss(animated: true)
     }
 
+    private func isPasswordValid() -> Bool {
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,255}$")
+        return passwordTest.evaluate(with: password.text)
+    }
+    private func isEmailValid() -> Bool {
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$")
+        return emailTest.evaluate(with: email.text)
+    }
+
     func isFormValide() -> Bool {
-        return false
+        guard isPasswordValid() else {
+            showAlert(message: NSLocalizedString("Password requirements: не менее 6 символов, [0-9, a-z, A-Z]", comment: ""))
+            return false
+        }
+        guard isEmailValid() else {
+            showAlert(message: NSLocalizedString("Wrong email format", comment: ""))
+            return false
+        }
+        return true
+    }
+
+    func showAlert(message: String) {
+
     }
 
     @objc func signUpPressed() {
-        print("Sign up pressed")
+        if isFormValide() {
+            print("Sign up pressed")
+        } else {
+            print("Sign up pressed. Invalide form")
+        }
     }
 
     @objc func adjustForKeyboardHandler(notification: NSNotification) {
@@ -127,9 +167,9 @@ class SignUpViewController: UIViewController {
         var contentInset: UIEdgeInsets!
         switch notification.name {
         case UIResponder.keyboardWillHideNotification:
-            contentInset = UIEdgeInsets(top: 64.0, left: 0.0, bottom: 0.0, right: 0.0)
+            contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         case UIResponder.keyboardWillChangeFrameNotification:
-            contentInset = UIEdgeInsets(top: 64.0, left: 0.0, bottom: keyboardFrame.size.height, right: 0.0)
+            contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.size.height, right: 0)
         default:
             break
         }
@@ -143,5 +183,22 @@ extension SignUpViewController: UITextFieldDelegate {
         _ = isFormValide()
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension SignUpViewController {
+    var doneToolbar: UIToolbar {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+
+        doneToolbar.items = [flexSpace, done]
+        doneToolbar.sizeToFit()
+
+        return doneToolbar
+    }
+
+    @objc func doneButtonAction() {
+        self.view.endEditing(true)
     }
 }
