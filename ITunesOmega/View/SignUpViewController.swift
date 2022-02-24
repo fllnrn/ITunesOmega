@@ -74,8 +74,6 @@ class SignUpViewController: UIViewController {
 
         configure(textField: password)
         password.placeholder = NSLocalizedString("Password", comment: "Password")
-        password.textContentType = .oneTimeCode
-        password.isSecureTextEntry = true
 
         signUpBtn.setTitle(NSLocalizedString("Sign Up", comment: "Sign Up"), for: .normal)
     }
@@ -192,6 +190,13 @@ class SignUpViewController: UIViewController {
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         signUpPressed()
+        return true
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == password && !password.isSecureTextEntry {
+            password.isSecureTextEntry = true
+        }
         return true
     }
 }
