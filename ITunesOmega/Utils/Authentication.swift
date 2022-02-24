@@ -52,7 +52,8 @@ class Authentication {
 
     func signIn(email: String, password: String) -> Bool {
         let request = User.createFetchRequest()
-        let predicate = NSPredicate(format: "email == %@ AND password == %d", email.lowercased(), hashedPassword(password))
+        let predicate = NSPredicate(format: "email == %@ AND password == %lld", email.lowercased(), hashedPassword(password))
+
         request.predicate = predicate
 
         do {
