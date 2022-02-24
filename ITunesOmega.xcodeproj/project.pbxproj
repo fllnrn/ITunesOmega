@@ -33,6 +33,8 @@
 		5C9A43C127C11CF3001C6B65 /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */; };
 		5C9A43C327C11E10001C6B65 /* ITunesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43C227C11E10001C6B65 /* ITunesModel.swift */; };
 		5C9A43C427C122F0001C6B65 /* ITunesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A43C227C11E10001C6B65 /* ITunesModel.swift */; };
+		5CB617EA27C6C5E700BC5717 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CB617EC27C6C5E700BC5717 /* Localizable.strings */; };
+		5CB617F027C6C98C00BC5717 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 5CB617F227C6C98C00BC5717 /* Localizable.stringsdict */; };
 		5CD9696127C1800C00A08E5A /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9696027C1800C00A08E5A /* AlbumDetailViewController.swift */; };
 		5CE9B05B27C29D7600D91B16 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9B05A27C29D7600D91B16 /* ImageFetcher.swift */; };
 		5CE9B05D27C2C12600D91B16 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9B05C27C2C12600D91B16 /* Date.swift */; };
@@ -82,6 +84,10 @@
 		5C9A43BB27C10E72001C6B65 /* ITunesSearchClient.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchClient.swift.swift; sourceTree = "<group>"; };
 		5C9A43BF27C11A00001C6B65 /* HTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
 		5C9A43C227C11E10001C6B65 /* ITunesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesModel.swift; sourceTree = "<group>"; };
+		5CB617EB27C6C5E700BC5717 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5CB617ED27C6C5FA00BC5717 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5CB617F127C6C98C00BC5717 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		5CB617F327C6C98E00BC5717 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		5CD9696027C1800C00A08E5A /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		5CE9B05A27C29D7600D91B16 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		5CE9B05C27C2C12600D91B16 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -157,6 +163,8 @@
 				5C706D7727C283E300C449E2 /* .swiftlint.yml */,
 				5C9A438F27C10006001C6B65 /* Info.plist */,
 				5C54DA8F27C5752E000247F9 /* ITunesOmega.xcdatamodeld */,
+				5CB617EC27C6C5E700BC5717 /* Localizable.strings */,
+				5CB617F227C6C98C00BC5717 /* Localizable.stringsdict */,
 			);
 			path = ITunesOmega;
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 5C9A437527C10005001C6B65;
 			packageReferences = (
@@ -332,7 +341,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C706D7827C283E300C449E2 /* .swiftlint.yml in Resources */,
+				5CB617EA27C6C5E700BC5717 /* Localizable.strings in Resources */,
 				5C9A438E27C10006001C6B65 /* LaunchScreen.storyboard in Resources */,
+				5CB617F027C6C98C00BC5717 /* Localizable.stringsdict in Resources */,
 				5C9A438B27C10006001C6B65 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +455,24 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		5CB617EC27C6C5E700BC5717 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CB617EB27C6C5E700BC5717 /* en */,
+				5CB617ED27C6C5FA00BC5717 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5CB617F227C6C98C00BC5717 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CB617F127C6C98C00BC5717 /* en */,
+				5CB617F327C6C98E00BC5717 /* ru */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -451,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -512,6 +542,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

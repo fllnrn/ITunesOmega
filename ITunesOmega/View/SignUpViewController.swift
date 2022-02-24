@@ -63,7 +63,7 @@ class SignUpViewController: UIViewController {
         phone.borderStyle = .roundedRect
         phone.withExamplePlaceholder = true
         phone.withPrefix = true // международный формат +7 ХХХ ХХХ-ХХ-ХХ / false - 8 (XXX) XXX XX-XX
-        phone.maxDigits = 10
+        phone.maxDigits = 11
         phone.inputAccessoryView = phone.doneToolbar
 
         configure(textField: email)
@@ -136,8 +136,20 @@ class SignUpViewController: UIViewController {
     }
 
     func isFormValide() -> Bool {
+        guard let name = name.text, name.count > 0 else {
+            showAlert(message: NSLocalizedString("Name not filled", comment: ""))
+            return false
+        }
+        guard let surname = surname.text, surname.count > 0 else {
+            showAlert(message: NSLocalizedString("Surname not filled", comment: ""))
+            return false
+        }
+        guard phone.isValidNumber else {
+            showAlert(message: NSLocalizedString("Phone number not valid", comment: ""))
+            return false
+        }
         guard isPasswordValid() else {
-            showAlert(message: NSLocalizedString("Password requirements: не менее 6 символов, [0-9, a-z, A-Z]", comment: ""))
+            showAlert(message: NSLocalizedString("Password requirements: at least 6 digits, [0-9, a-z, A-Z]", comment: ""))
             return false
         }
         guard isEmailValid() else {
@@ -148,7 +160,9 @@ class SignUpViewController: UIViewController {
     }
 
     func showAlert(message: String) {
-
+        let alert = UIAlertController(title: NSLocalizedString("Error", comment: "Error"), message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel))
+        present(alert, animated: true)
     }
 
     @objc func signUpPressed() {
@@ -180,8 +194,7 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        _ = isFormValide()
-        textField.resignFirstResponder()
+        signUpPressed()
         return true
     }
 }

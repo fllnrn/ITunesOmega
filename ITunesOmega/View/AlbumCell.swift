@@ -25,7 +25,7 @@ class AlbumCell: UITableViewCell {
             albumImageView.image = cover ?? UIImage(systemName: "photo")
             albumTitleLbl.text = "\(NSLocalizedString("Album", comment: "Album: name")): \n" + album.albumTitle
             artistNameLbl.text = album.artistName
-            trackCountLbl.text = "\(album.trackCount) \(NSLocalizedString("songs", comment: "# songs"))"
+            trackCountLbl.text = String.localizedStringWithFormat(NSLocalizedString("n songs", comment: "n songs"), album.trackCount)
         } else {
                 albumImageView.image = UIImage(systemName: "photo")
                 albumTitleLbl.text = ""
