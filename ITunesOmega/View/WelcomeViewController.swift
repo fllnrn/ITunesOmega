@@ -39,7 +39,7 @@ class WelcomeViewController: UIViewController {
         email.placeholder = NSLocalizedString("Email", comment: "Email")
         email.keyboardType = .emailAddress
         password.placeholder = NSLocalizedString("Password", comment: "Password")
-        password.textContentType = .newPassword
+        password.textContentType = .oneTimeCode
         password.isSecureTextEntry = true
         logInBtn.setTitle(NSLocalizedString("Log In", comment: "Log In"), for: .normal)
     }

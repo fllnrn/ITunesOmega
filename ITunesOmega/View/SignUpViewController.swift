@@ -74,7 +74,7 @@ class SignUpViewController: UIViewController {
 
         configure(textField: password)
         password.placeholder = NSLocalizedString("Password", comment: "Password")
-        password.textContentType = .newPassword
+        password.textContentType = .oneTimeCode
         password.isSecureTextEntry = true
 
         signUpBtn.setTitle(NSLocalizedString("Sign Up", comment: "Sign Up"), for: .normal)
@@ -167,8 +167,6 @@ class SignUpViewController: UIViewController {
             } else {
                 showErrorAlert(message: NSLocalizedString("Error. User was not created", comment: "Error. User was not created"))
             }
-        } else {
-            print("Sign up pressed. Invalide form")
         }
     }
 

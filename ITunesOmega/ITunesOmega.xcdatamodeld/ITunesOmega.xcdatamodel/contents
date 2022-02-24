@@ -4,7 +4,7 @@
         <attribute name="age" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="email" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
-        <attribute name="password" attributeType="String"/>
+        <attribute name="password" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="phone" attributeType="String"/>
         <attribute name="surname" attributeType="String"/>
     </entity>

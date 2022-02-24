@@ -11,10 +11,15 @@ import CoreData
 
 class Authentication {
     static var shared = Authentication()
+    static private var salt = 4 // choosen by fair dice roll
     private var container: NSPersistentContainer {
         // swiftlint:disable force_cast
         (UIApplication.shared.delegate as! AppDelegate).persistentContainer
         // swiftlint:enable force_cast
+    }
+
+    private func hashedPassword(_ pass: String) -> Int64 {
+        Int64(pass.hashValue + Authentication.salt)
     }
 
     private(set) var currentUser: User?
@@ -31,7 +36,7 @@ class Authentication {
         newUser.age = age
         newUser.phone = phone
         newUser.email = email.lowercased()
-        newUser.password = password
+        newUser.password = hashedPassword(password)
 
         if container.viewContext.hasChanges {
             do {
@@ -47,7 +52,7 @@ class Authentication {
 
     func signIn(email: String, password: String) -> Bool {
         let request = User.createFetchRequest()
-        let predicate = NSPredicate(format: "email == %@ AND password == %@", email.lowercased(), password)
+        let predicate = NSPredicate(format: "email == %@ AND password == %d", email.lowercased(), hashedPassword(password))
         request.predicate = predicate
 
         do {
