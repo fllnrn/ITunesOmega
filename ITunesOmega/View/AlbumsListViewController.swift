@@ -15,6 +15,7 @@ class AlbumsListViewController: UIViewController {
 
     var viewModel: AlbumsViewModel!
 
+    private let userInfoLbl = UILabel()
     private let searchField = UITextField()
     private let tableView = UITableView()
     private let activityIndicator = UIActivityIndicatorView()
@@ -26,6 +27,9 @@ class AlbumsListViewController: UIViewController {
         searchField.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+        if let user = Authentication.shared.currentUser {
+            userInfoLbl.text = "\(user.name) \(user.surname)"
+        }
     }
 
     required init?(coder: NSCoder) {
@@ -40,6 +44,14 @@ class AlbumsListViewController: UIViewController {
 
     func setupUI() {
         view.backgroundColor = UIColor.systemBackground
+        view.addSubview(userInfoLbl)
+        userInfoLbl.translatesAutoresizingMaskIntoConstraints = false
+        let infoConstraints = [
+            userInfoLbl.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            userInfoLbl.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            userInfoLbl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+        ]
+        NSLayoutConstraint.activate(infoConstraints)
 
         view.addSubview(searchField)
         searchField.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +59,7 @@ class AlbumsListViewController: UIViewController {
         searchField.placeholder = NSLocalizedString("search...", comment: "search")
         searchField.borderStyle = .roundedRect
         let searchConstraints = [
-            searchField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: LayoutConstants.spacer),
+            searchField.topAnchor.constraint(equalTo: userInfoLbl.bottomAnchor, constant: LayoutConstants.spacer),
             searchField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: LayoutConstants.spacer),
             searchField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -LayoutConstants.spacer)]
         NSLayoutConstraint.activate(searchConstraints)

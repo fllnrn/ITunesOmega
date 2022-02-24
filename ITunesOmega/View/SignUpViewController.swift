@@ -42,6 +42,7 @@ class SignUpViewController: UIViewController {
         textField.delegate = self
         textField.inputAccessoryView = textField.doneToolbar
         textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
     }
 
     private func setupUI() {
@@ -63,15 +64,17 @@ class SignUpViewController: UIViewController {
         phone.borderStyle = .roundedRect
         phone.withExamplePlaceholder = true
         phone.withPrefix = true // международный формат +7 ХХХ ХХХ-ХХ-ХХ / false - 8 (XXX) XXX XX-XX
-        phone.maxDigits = 11
+        phone.maxDigits = 10
         phone.inputAccessoryView = phone.doneToolbar
 
         configure(textField: email)
         email.placeholder = NSLocalizedString("Email", comment: "Email")
+        email.textContentType = .emailAddress
         email.keyboardType = .emailAddress
 
         configure(textField: password)
         password.placeholder = NSLocalizedString("Password", comment: "Password")
+        password.textContentType = .newPassword
         password.isSecureTextEntry = true
 
         signUpBtn.setTitle(NSLocalizedString("Sign Up", comment: "Sign Up"), for: .normal)
@@ -137,29 +140,29 @@ class SignUpViewController: UIViewController {
 
     func isFormValide() -> Bool {
         guard let name = name.text, name.count > 0 else {
-            showAlert(message: NSLocalizedString("Name not filled", comment: ""))
+            showErrorAlert(message: NSLocalizedString("Name not filled", comment: ""))
             return false
         }
         guard let surname = surname.text, surname.count > 0 else {
-            showAlert(message: NSLocalizedString("Surname not filled", comment: ""))
+            showErrorAlert(message: NSLocalizedString("Surname not filled", comment: ""))
             return false
         }
         guard phone.isValidNumber else {
-            showAlert(message: NSLocalizedString("Phone number not valid", comment: ""))
+            showErrorAlert(message: NSLocalizedString("Phone number not valid", comment: ""))
             return false
         }
         guard isPasswordValid() else {
-            showAlert(message: NSLocalizedString("Password requirements: at least 6 digits, [0-9, a-z, A-Z]", comment: ""))
+            showErrorAlert(message: NSLocalizedString("Password requirements: at least 6 digits, [0-9, a-z, A-Z]", comment: ""))
             return false
         }
         guard isEmailValid() else {
-            showAlert(message: NSLocalizedString("Wrong email format", comment: ""))
+            showErrorAlert(message: NSLocalizedString("Wrong email format", comment: ""))
             return false
         }
         return true
     }
 
-    func showAlert(message: String) {
+    func showErrorAlert(message: String) {
         let alert = UIAlertController(title: NSLocalizedString("Error", comment: "Error"), message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel))
         present(alert, animated: true)
@@ -167,7 +170,12 @@ class SignUpViewController: UIViewController {
 
     @objc func signUpPressed() {
         if isFormValide() {
-            print("Sign up pressed")
+            let sucess = Authentication.shared.createUser(name: name.text!, surname: surname.text!, age: age.date, phone: phone.text!, email: email.text!, password: password.text!)
+            if sucess {
+                dismiss(animated: true)
+            } else {
+                showErrorAlert(message: NSLocalizedString("Error. User was not created", comment: "Error. User was not created"))
+            }
         } else {
             print("Sign up pressed. Invalide form")
         }

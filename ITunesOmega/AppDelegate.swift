@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "UsersStore")
+        let container = NSPersistentContainer(name: "ITunesOmega")
         container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("Core data error \(error.localizedDescription)")

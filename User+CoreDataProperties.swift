@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  ITunesOmega
 //
-//  Created by Андрей Гавриков on 23.02.2022.
+//  Created by Андрей Гавриков on 24.02.2022.
 //
 //
 
@@ -11,15 +11,16 @@ import CoreData
 
 extension User {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<User> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<User> {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var name: String
-    @NSManaged public var surname: String
     @NSManaged public var age: Date
-    @NSManaged public var phone: String
     @NSManaged public var email: String
+    @NSManaged public var name: String
+    @NSManaged public var phone: String
+    @NSManaged public var surname: String
+    @NSManaged public var password: String
 
 }
 

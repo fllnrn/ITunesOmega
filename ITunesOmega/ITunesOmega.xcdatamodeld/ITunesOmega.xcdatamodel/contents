@@ -4,10 +4,11 @@
         <attribute name="age" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="email" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="password" attributeType="String"/>
         <attribute name="phone" attributeType="String"/>
         <attribute name="surname" attributeType="String"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="119"/>
     </elements>
 </model>

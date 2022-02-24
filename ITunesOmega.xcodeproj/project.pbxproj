@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C088C1427C77196005C77FC /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C088C1327C77196005C77FC /* Authentication.swift */; };
 		5C54DA9127C5752E000247F9 /* ITunesOmega.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA8F27C5752E000247F9 /* ITunesOmega.xcdatamodeld */; };
 		5C54DA9527C57FDA000247F9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */; };
 		5C54DA9627C57FDA000247F9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C088C1327C77196005C77FC /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		5C54DA9027C5752E000247F9 /* ITunesOmega.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITunesOmega.xcdatamodel; sourceTree = "<group>"; };
 		5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -119,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C088C1227C7716E005C77FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5C088C1327C77196005C77FC /* Authentication.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		5C54DA9227C576C8000247F9 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		5C9A438027C10005001C6B65 /* ITunesOmega */ = {
 			isa = PBXGroup;
 			children = (
+				5C088C1227C7716E005C77FC /* Utils */,
 				5C54DA9227C576C8000247F9 /* CoreData */,
 				5C9A43B427C10472001C6B65 /* View */,
 				5C9A43B227C10458001C6B65 /* Model */,
@@ -392,6 +403,7 @@
 				5C83592427C14AB9008C7158 /* AlbumsViewModel.swift in Sources */,
 				5C54DA9127C5752E000247F9 /* ITunesOmega.xcdatamodeld in Sources */,
 				5C83592227C145D4008C7158 /* AlbumsListViewController.swift in Sources */,
+				5C088C1427C77196005C77FC /* Authentication.swift in Sources */,
 				5C9A438227C10005001C6B65 /* AppDelegate.swift in Sources */,
 				5CD9696127C1800C00A08E5A /* AlbumDetailViewController.swift in Sources */,
 				5C9A43BC27C10E72001C6B65 /* ITunesSearchClient.swift.swift in Sources */,

@@ -29,10 +29,13 @@ class WelcomeViewController: UIViewController {
         email.placeholder = NSLocalizedString("Email", comment: "Email")
         email.borderStyle = .roundedRect
         email.autocorrectionType = .no
+        email.autocapitalizationType = .none
+        email.keyboardType = .emailAddress
         email.inputAccessoryView = email.doneToolbar
         password.placeholder = NSLocalizedString("Password", comment: "Password")
         password.borderStyle = .roundedRect
-        password.isSecureTextEntry = true
+        password.textContentType = .oneTimeCode
+        password.autocapitalizationType = .none
         password.inputAccessoryView = password.doneToolbar
         logInBtn.setTitle(NSLocalizedString("Log In", comment: "Log In"), for: .normal)
     }
@@ -63,14 +66,17 @@ class WelcomeViewController: UIViewController {
     }
 
     @objc func logInPressed() {
-        let userExists = [true, false].randomElement()!
-        if userExists {
+        guard let email = email.text, let password = password.text else { return }
+
+        let signed = Authentication.shared.signIn(email: email, password: password)
+        if signed {
             let albumsVC = AlbumsListViewController(albumsViewModel: AlbumsViewModel())
-            show(albumsVC, sender: self)
+            self.show(albumsVC, sender: self)
         } else {
-            let alert = UIAlertController(title: NSLocalizedString("Error", comment: "Error"), message: NSLocalizedString("Wrong username or password", comment: "Wrong username or password"), preferredStyle: .alert)
+            let alert = UIAlertController(title: NSLocalizedString("Error", comment: "Error"),
+                                          message: NSLocalizedString("Wrong username or password", comment: "Wrong username or password"), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel))
-            present(alert, animated: true)
+            self.present(alert, animated: true)
         }
     }
 
