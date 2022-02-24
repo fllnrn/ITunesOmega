@@ -23,6 +23,7 @@ class Authentication {
 
     }
 
+    // swiftlint:disable function_parameter_count
     func createUser(name: String, surname: String, age: Date, phone: String, email: String, password: String) -> Bool {
         let newUser = User(context: container.viewContext)
         newUser.name = name
@@ -42,6 +43,7 @@ class Authentication {
         }
         return true
     }
+    // swiftlint:enable function_parameter_count
 
     func signIn(email: String, password: String) -> Bool {
         let request = User.createFetchRequest()

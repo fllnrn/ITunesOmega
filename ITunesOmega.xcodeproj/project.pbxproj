@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5C088C1427C77196005C77FC /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C088C1327C77196005C77FC /* Authentication.swift */; };
+		5C088C1927C79452005C77FC /* FormUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C088C1827C79452005C77FC /* FormUtils.swift */; };
+		5C088C1A27C794CF005C77FC /* FormUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C088C1827C79452005C77FC /* FormUtils.swift */; };
 		5C54DA9127C5752E000247F9 /* ITunesOmega.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA8F27C5752E000247F9 /* ITunesOmega.xcdatamodeld */; };
 		5C54DA9527C57FDA000247F9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */; };
 		5C54DA9627C57FDA000247F9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */; };
@@ -60,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		5C088C1327C77196005C77FC /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		5C088C1827C79452005C77FC /* FormUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUtils.swift; sourceTree = "<group>"; };
 		5C54DA9027C5752E000247F9 /* ITunesOmega.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITunesOmega.xcdatamodel; sourceTree = "<group>"; };
 		5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -125,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				5C088C1327C77196005C77FC /* Authentication.swift */,
+				5C088C1827C79452005C77FC /* FormUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -417,6 +421,7 @@
 				5CE9B05B27C29D7600D91B16 /* ImageFetcher.swift in Sources */,
 				5C54DA9627C57FDA000247F9 /* User+CoreDataProperties.swift in Sources */,
 				5CE9B05D27C2C12600D91B16 /* Date.swift in Sources */,
+				5C088C1927C79452005C77FC /* FormUtils.swift in Sources */,
 				5C6D2D7427C64CC200D778D4 /* RUPhoneTextField.swift in Sources */,
 				5C9A43C327C11E10001C6B65 /* ITunesModel.swift in Sources */,
 				5C9054FE27C4260B00AA5CC0 /* WelcomeViewController.swift in Sources */,
@@ -427,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C088C1A27C794CF005C77FC /* FormUtils.swift in Sources */,
 				5C9A439927C10006001C6B65 /* ITunesOmegaTests.swift in Sources */,
 				5C9A43BD27C116E5001C6B65 /* ITunesSearchClient.swift.swift in Sources */,
 				5C9A43C127C11CF3001C6B65 /* HTTPURLResponse.swift in Sources */,

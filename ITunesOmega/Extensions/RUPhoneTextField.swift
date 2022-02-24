@@ -13,6 +13,9 @@ class RUPhoneTextField: PhoneNumberTextField {
         get {
             return "RU"
         }
+
+        // swiftlint:disable unused_setter_value
         set {} // exists for backward compatibility
+        // swiftlint:enable unused_setter_value
     }
 }

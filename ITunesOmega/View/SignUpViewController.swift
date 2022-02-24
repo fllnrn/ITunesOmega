@@ -129,15 +129,6 @@ class SignUpViewController: UIViewController {
         dismiss(animated: true)
     }
 
-    private func isPasswordValid() -> Bool {
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,255}$")
-        return passwordTest.evaluate(with: password.text)
-    }
-    private func isEmailValid() -> Bool {
-        let emailTest = NSPredicate(format: "SELF MATCHES %@", "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$")
-        return emailTest.evaluate(with: email.text)
-    }
-
     func isFormValide() -> Bool {
         guard let name = name.text, name.count > 0 else {
             showErrorAlert(message: NSLocalizedString("Name not filled", comment: ""))
@@ -151,11 +142,11 @@ class SignUpViewController: UIViewController {
             showErrorAlert(message: NSLocalizedString("Phone number not valid", comment: ""))
             return false
         }
-        guard isPasswordValid() else {
+        guard isPasswordValid(password.text!) else {
             showErrorAlert(message: NSLocalizedString("Password requirements: at least 6 digits, [0-9, a-z, A-Z]", comment: ""))
             return false
         }
-        guard isEmailValid() else {
+        guard isEmailValid(email.text!) else {
             showErrorAlert(message: NSLocalizedString("Wrong email format", comment: ""))
             return false
         }

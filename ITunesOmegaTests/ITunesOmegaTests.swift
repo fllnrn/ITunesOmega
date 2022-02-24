@@ -55,6 +55,19 @@ class ITunesOmegaTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
 
+    func testPasswordRegex() throws {
+        func test(_ input: String, _ output: Bool) {
+            let valide = isPasswordValid(input)
+            XCTAssertEqual(valide, output)
+        }
+        test("123qweQWE", true)
+        test("QWEqwe123", true)
+        test("qwQW12", true)
+        test("123", false)
+        test("123456Q", false)
+        test("123456q", false)
+    }
+
 //
 //    func testPerformanceExample() throws {
 //        // This is an example of a performance test case.

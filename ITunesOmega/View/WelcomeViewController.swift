@@ -26,17 +26,21 @@ class WelcomeViewController: UIViewController {
     }
 
     private func setupUI() {
+        func setup(_ field: UITextField) {
+            field.borderStyle = .roundedRect
+            field.autocorrectionType = .no
+            field.autocapitalizationType = .none
+            field.inputAccessoryView = password.doneToolbar
+            field.delegate = self
+        }
+        setup(email)
+        setup(password)
+
         email.placeholder = NSLocalizedString("Email", comment: "Email")
-        email.borderStyle = .roundedRect
-        email.autocorrectionType = .no
-        email.autocapitalizationType = .none
         email.keyboardType = .emailAddress
-        email.inputAccessoryView = email.doneToolbar
         password.placeholder = NSLocalizedString("Password", comment: "Password")
-        password.borderStyle = .roundedRect
-        password.textContentType = .oneTimeCode
-        password.autocapitalizationType = .none
-        password.inputAccessoryView = password.doneToolbar
+        password.textContentType = .newPassword
+        password.isSecureTextEntry = true
         logInBtn.setTitle(NSLocalizedString("Log In", comment: "Log In"), for: .normal)
     }
 
@@ -80,4 +84,11 @@ class WelcomeViewController: UIViewController {
         }
     }
 
+}
+
+extension WelcomeViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        logInPressed()
+        return true
+    }
 }

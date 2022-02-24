@@ -28,7 +28,13 @@ class AlbumsListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         if let user = Authentication.shared.currentUser {
-            userInfoLbl.text = "\(user.name) \(user.surname)"
+            let nameDesc = NSLocalizedString("Name", comment: "Name")
+            let surnameDesc = NSLocalizedString("Surname", comment: "Surname")
+
+            userInfoLbl.text =  """
+                                \(nameDesc): \(user.name)
+                                \(surnameDesc): \(user.surname)
+                                """
         }
     }
 
@@ -46,6 +52,7 @@ class AlbumsListViewController: UIViewController {
         view.backgroundColor = UIColor.systemBackground
         view.addSubview(userInfoLbl)
         userInfoLbl.translatesAutoresizingMaskIntoConstraints = false
+        userInfoLbl.numberOfLines = 2
         let infoConstraints = [
             userInfoLbl.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             userInfoLbl.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
