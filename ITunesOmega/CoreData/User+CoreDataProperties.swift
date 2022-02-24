@@ -18,9 +18,9 @@ extension User {
     @NSManaged public var age: Date
     @NSManaged public var email: String
     @NSManaged public var name: String
+    @NSManaged public var password: Int64
     @NSManaged public var phone: String
     @NSManaged public var surname: String
-    @NSManaged public var password: Int64
 
 }
 

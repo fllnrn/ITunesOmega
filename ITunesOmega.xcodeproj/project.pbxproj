@@ -11,8 +11,6 @@
 		5C088C1927C79452005C77FC /* FormUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C088C1827C79452005C77FC /* FormUtils.swift */; };
 		5C088C1A27C794CF005C77FC /* FormUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C088C1827C79452005C77FC /* FormUtils.swift */; };
 		5C54DA9127C5752E000247F9 /* ITunesOmega.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA8F27C5752E000247F9 /* ITunesOmega.xcdatamodeld */; };
-		5C54DA9527C57FDA000247F9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */; };
-		5C54DA9627C57FDA000247F9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */; };
 		5C6D2D7027C646A000D778D4 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C6D2D6F27C646A000D778D4 /* PhoneNumberKit */; };
 		5C6D2D7427C64CC200D778D4 /* RUPhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D2D7327C64CC200D778D4 /* RUPhoneTextField.swift */; };
 		5C6D2D7927C6671100D778D4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D2D7827C6671100D778D4 /* TextField.swift */; };
@@ -41,6 +39,8 @@
 		5CD9696127C1800C00A08E5A /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9696027C1800C00A08E5A /* AlbumDetailViewController.swift */; };
 		5CE9B05B27C29D7600D91B16 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9B05A27C29D7600D91B16 /* ImageFetcher.swift */; };
 		5CE9B05D27C2C12600D91B16 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE9B05C27C2C12600D91B16 /* Date.swift */; };
+		5CFB2C7527C79BA000332EFA /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFB2C7327C79BA000332EFA /* User+CoreDataClass.swift */; };
+		5CFB2C7627C79BA000332EFA /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFB2C7427C79BA000332EFA /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +64,6 @@
 		5C088C1327C77196005C77FC /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		5C088C1827C79452005C77FC /* FormUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUtils.swift; sourceTree = "<group>"; };
 		5C54DA9027C5752E000247F9 /* ITunesOmega.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITunesOmega.xcdatamodel; sourceTree = "<group>"; };
-		5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		5C6D2D7327C64CC200D778D4 /* RUPhoneTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUPhoneTextField.swift; sourceTree = "<group>"; };
 		5C6D2D7827C6671100D778D4 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		5C706D7727C283E300C449E2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -96,6 +94,8 @@
 		5CD9696027C1800C00A08E5A /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		5CE9B05A27C29D7600D91B16 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		5CE9B05C27C2C12600D91B16 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		5CFB2C7327C79BA000332EFA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5CFB2C7427C79BA000332EFA /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +136,8 @@
 		5C54DA9227C576C8000247F9 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				5C54DA9327C57FDA000247F9 /* User+CoreDataClass.swift */,
-				5C54DA9427C57FDA000247F9 /* User+CoreDataProperties.swift */,
+				5CFB2C7327C79BA000332EFA /* User+CoreDataClass.swift */,
+				5CFB2C7427C79BA000332EFA /* User+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -411,7 +411,7 @@
 				5C9A438227C10005001C6B65 /* AppDelegate.swift in Sources */,
 				5CD9696127C1800C00A08E5A /* AlbumDetailViewController.swift in Sources */,
 				5C9A43BC27C10E72001C6B65 /* ITunesSearchClient.swift.swift in Sources */,
-				5C54DA9527C57FDA000247F9 /* User+CoreDataClass.swift in Sources */,
+				5CFB2C7527C79BA000332EFA /* User+CoreDataClass.swift in Sources */,
 				5C9A43C027C11A00001C6B65 /* HTTPURLResponse.swift in Sources */,
 				5C83592627C14AF1008C7158 /* Album.swift in Sources */,
 				5C9A438427C10005001C6B65 /* SceneDelegate.swift in Sources */,
@@ -419,9 +419,9 @@
 				5C6D2D7927C6671100D778D4 /* TextField.swift in Sources */,
 				5C90550027C43DBF00AA5CC0 /* SignUpViewController.swift in Sources */,
 				5CE9B05B27C29D7600D91B16 /* ImageFetcher.swift in Sources */,
-				5C54DA9627C57FDA000247F9 /* User+CoreDataProperties.swift in Sources */,
 				5CE9B05D27C2C12600D91B16 /* Date.swift in Sources */,
 				5C088C1927C79452005C77FC /* FormUtils.swift in Sources */,
+				5CFB2C7627C79BA000332EFA /* User+CoreDataProperties.swift in Sources */,
 				5C6D2D7427C64CC200D778D4 /* RUPhoneTextField.swift in Sources */,
 				5C9A43C327C11E10001C6B65 /* ITunesModel.swift in Sources */,
 				5C9054FE27C4260B00AA5CC0 /* WelcomeViewController.swift in Sources */,

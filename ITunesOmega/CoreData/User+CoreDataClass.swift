@@ -2,7 +2,7 @@
 //  User+CoreDataClass.swift
 //  ITunesOmega
 //
-//  Created by Андрей Гавриков on 22.02.2022.
+//  Created by Андрей Гавриков on 24.02.2022.
 //
 //
 
